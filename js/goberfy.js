@@ -2,10 +2,10 @@ Goberfy = function()
 {  
     var button = $(".button");
 
-    $.get( "js/words.json", function( data ) {
-        var wordList = data;
+    var wordList;
 
-        console.log(data);
+    $.getJSON( "js/words.json", function( data ) {
+        wordList = data;
     });
 
     button.on("click", function() {
