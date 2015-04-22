@@ -4,21 +4,44 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Goberfy</title>
 
+        <!-- Site fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
         <!-- Site CSS -->
         <link href="css/styles.css" rel="stylesheet" type="text/css" media="screen" />
         
         <!-- JS Lib -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
         <!-- Site JS -->
         <script src="js/goberfy.js"></script>
     </head>
     
     <body>
-        <div class="container">
-            <textarea class="input"></textarea>
-            <a class="button" href="#">Goberfy</a>
-            <div class="output"></div>
-        </div>
+            <header class="band band--header">
+                <div class="wrapper">
+                    <h1>The M.A.R.I Goberfryer 2000</h1>
+                    <h2>(Madgex Automated Response Inspector)</h2>
+                </div>
+            </header>
+
+            <div class="band band--input">
+                <div class="wrapper">
+                    <textarea class="input js-input"></textarea>
+                    <a class="button js-button" href="">Goberfry</a>
+                </div>
+            </div>
+
+            <div class="band band--output">
+                <div class="wrapper">
+                    <h1>Your Gober score is:</h1>
+
+                    <div class="output">
+                        <div class="output__score js-score">0</div>
+                        <div class="output__face js-face"></div>
+                        <div class="output__message js-message"></div>
+                    </div>
+                </div>
+            </div>
     </body>
 </html>
