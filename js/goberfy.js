@@ -3,11 +3,14 @@ Goberfy = function()
     var button = $(".js-button");
 
     var wordList;
+    var score;
 
+    //get word/phrase lise
     $.getJSON( "js/words.json", function( data ) {
         wordList = data;
     });
 
+    //button press
     button.on("click", function(event) {
         event.preventDefault();
 
@@ -16,21 +19,30 @@ Goberfy = function()
 
     function goberfy()
     {
+        //get input and strip some characters
         var input = $(".js-input").val();
-        var inputArray = input.split(" ");
-        var score = 0;
+        input = input.replace("'", "");
+        input = input.replace('"', "");
+        input = input.replace("-", "");
 
-        inputArray.forEach(function(entry) {
-            var word = entry.replace("'", "");
-            word = word.replace("-", "");
+        //reset score
+        score = 0;
 
-            if(wordList[word]) {
-                score += parseInt(wordList[word]);
+        //loop over the word list and search input for each word/phrase
+        $.each(wordList, function(word, value) {
+            var rgxp = new RegExp("\\b" + word, "gi");
+
+            var matches = input.match(rgxp);
+
+            if(matches) {
+                score = score + (matches.length * value);
             }
         });
 
+        //display score
         $(".js-score").text(score);
 
+        //show messages and face
         if(score > 0) {
             $(".js-message").removeClass("output__message--negative").addClass("output__message--positive").text("Excellent work, that message is Goberfry approved!");
             $(".js-message").removeClass("output__face--negative").addClass("output__face--positive");
