@@ -30,7 +30,7 @@ Goberfy = function()
 
         //loop over the word list and search input for each word/phrase
         $.each(wordList, function(word, value) {
-            var rgxp = new RegExp("\\b" + word, "gi");
+            var rgxp = new RegExp("\\b(" + word + ")\\b", "gi");
 
             var matches = input.match(rgxp);
 
