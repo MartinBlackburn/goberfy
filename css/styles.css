@@ -126,3 +126,19 @@ h2 {
 .output__message--negative {
   color: #c0272d;
 }
+
+.output__face {
+  height: 150px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.output__face--positive {
+  background-image: url("../images/black.png");
+}
+
+.output__face--negative {
+  background-image: url("../images/red.png");
+}

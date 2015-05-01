@@ -45,10 +45,10 @@ Goberfy = function()
         //show messages and face
         if(score > 0) {
             $(".js-message").removeClass("output__message--negative").addClass("output__message--positive").text("Excellent work, that message is Goberfry approved!");
-            $(".js-message").removeClass("output__face--negative").addClass("output__face--positive");
+            $(".js-face").removeClass("output__face--negative").addClass("output__face--positive");
         } else {
             $(".js-message").removeClass("output__message--positive").addClass("output__message--negative").text("Take a good look in the mirror.");
-            $(".js-message").removeClass("output__face--positive").addClass("output__face--negative");
+            $(".js-face").removeClass("output__face--positive").addClass("output__face--negative");
         }
     }
 };
